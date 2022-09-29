@@ -54,10 +54,12 @@ template<class T>
 Elem<T> QueueList<T>::Extract()
 {
     Elem<T>* temp = Head;
+    Tail = nullptr;
     Head = Head->next;
     Elem<T> buf; 
     buf.data = temp->data;
     delete[]temp;
+    
     Count--;
     return buf;
 }
@@ -125,4 +127,5 @@ int main()
     cout << endl << L.Extract().data;
     cout << endl;
     L.Print();
+    cout << endl << L.GetCount();
 }
