@@ -54,7 +54,7 @@ template<class T>
 Elem<T> QueueList<T>::Extract()
 {
     Elem<T>* temp = Head;
-    Tail = nullptr;
+    Head->prev = nullptr;
     Head = Head->next;
     Elem<T> buf; 
     buf.data = temp->data;
